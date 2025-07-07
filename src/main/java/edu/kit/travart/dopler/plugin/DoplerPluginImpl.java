@@ -34,16 +34,16 @@ import java.util.List;
  * Implementation of {@link IPlugin}  with the {@link Dopler} model as type variable.
  */
 @Extension
-public class DoplerPlugin implements IPlugin<Dopler> {
+public class DoplerPluginImpl implements IPlugin<Dopler> {
 
     private static final String ID = "dopler-decision-plugin";
 
     private final Injector injector;
 
     /**
-     * Constructor of {@link DoplerPlugin}:
+     * Constructor of {@link DoplerPluginImpl}:
      */
-    public DoplerPlugin() {
+    public DoplerPluginImpl() {
         injector = new Injector();
     }
 
@@ -74,7 +74,7 @@ public class DoplerPlugin implements IPlugin<Dopler> {
 
     @Override
     public String getName() {
-        return "Decision-Oriented Product Line Engineering for effective Reuse";
+        return "dopler";
     }
 
     @Override
@@ -84,7 +84,7 @@ public class DoplerPlugin implements IPlugin<Dopler> {
 
     @Override
     public String getVersion() {
-        return "2.0";
+        return "2.0.1";
     }
 
     @Override

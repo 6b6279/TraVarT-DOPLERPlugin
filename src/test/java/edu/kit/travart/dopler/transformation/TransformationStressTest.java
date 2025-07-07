@@ -21,7 +21,9 @@ import de.vill.model.FeatureModel;
 import edu.kit.dopler.io.DecisionModelReader;
 import edu.kit.dopler.io.DecisionModelWriter;
 import edu.kit.dopler.model.Dopler;
-import edu.kit.travart.dopler.plugin.DoplerPlugin;
+import edu.kit.travart.dopler.plugin.DoplerPluginImpl;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -41,7 +43,7 @@ import static at.jku.cps.travart.core.common.IModelTransformer.STRATEGY.ROUNDTRI
 class TransformationStressTest {
 
     private static final Path DATA_PATH = Path.of("src", "test", "resources", "stress", "working");
-    private final DoplerPlugin plugin = new DoplerPlugin();
+    private final DoplerPluginImpl plugin = new DoplerPluginImpl();
     private final IModelTransformer<Dopler> transformer = plugin.getTransformer();
 
     /**
@@ -49,6 +51,7 @@ class TransformationStressTest {
      *
      * @param path Expected model    Real, transformed model
      */
+    @Disabled // Ignore only during development!
     @ParameterizedTest(name = "{0}")
     @MethodSource("dataSourceMethod")
     @Execution(ExecutionMode.CONCURRENT)

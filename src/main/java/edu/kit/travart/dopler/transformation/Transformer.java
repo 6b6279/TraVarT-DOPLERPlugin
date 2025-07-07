@@ -24,6 +24,7 @@ import edu.kit.travart.dopler.transformation.feature.to.decision.FmToDmTransform
 /**
  * Transforms {@link Dopler} models into {@link FeatureModel}s and vice versa.
  */
+// FIXME Use a more intuitive name for class
 public class Transformer implements IModelTransformer<Dopler> {
 
     private final DmToFmTransformer dmToFmTransformer;

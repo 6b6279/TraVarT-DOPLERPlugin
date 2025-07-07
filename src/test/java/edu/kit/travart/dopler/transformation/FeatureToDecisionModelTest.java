@@ -23,7 +23,7 @@ import de.vill.model.FeatureModel;
 import edu.kit.travart.dopler.TestUtils;
 import edu.kit.dopler.model.Dopler;
 import edu.kit.travart.dopler.plugin.CsvFormat;
-import edu.kit.travart.dopler.plugin.DoplerPlugin;
+import edu.kit.travart.dopler.plugin.DoplerPluginImpl;
 import edu.kit.travart.dopler.transformation.decision.to.feature.TreeBeautifier;
 
 import java.io.IOException;
@@ -33,7 +33,7 @@ import java.nio.file.Paths;
 
 class FeatureToDecisionModelTest extends TransformationTest<FeatureModel, Dopler> {
 
-    private final IPlugin<Dopler> plugin = new DoplerPlugin();
+    private final IPlugin<Dopler> plugin = new DoplerPluginImpl();
 
     @Override
     protected String readToModelAsString(Path path) throws IOException {

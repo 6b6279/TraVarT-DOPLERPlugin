@@ -24,7 +24,7 @@ import edu.kit.travart.dopler.TestUtils;
 import edu.kit.travart.dopler.injection.Injector;
 import edu.kit.dopler.model.Dopler;
 import edu.kit.travart.dopler.plugin.CsvFormat;
-import edu.kit.travart.dopler.plugin.DoplerPlugin;
+import edu.kit.travart.dopler.plugin.DoplerPluginImpl;
 import edu.kit.travart.dopler.plugin.DoplerSerializer;
 import edu.kit.travart.dopler.transformation.decision.to.feature.TreeBeautifier;
 
@@ -35,7 +35,7 @@ import java.nio.file.Paths;
 
 class DecisionToFeatureModelTest extends TransformationTest<Dopler, FeatureModel> {
 
-    private final IPlugin<Dopler> plugin = new DoplerPlugin();
+    private final IPlugin<Dopler> plugin = new DoplerPluginImpl();
 
     @Override
     protected String readToModelAsString(Path path) throws IOException {
