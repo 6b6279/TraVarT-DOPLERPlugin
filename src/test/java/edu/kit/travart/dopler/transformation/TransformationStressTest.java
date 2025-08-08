@@ -57,12 +57,12 @@ class TransformationStressTest {
     @Execution(ExecutionMode.CONCURRENT)
     void tryToConvert(Path path) throws Exception {
         FeatureModel featureModel = new UVLModelFactory().parse(Files.readString(path));
-        Dopler dopler1 = transformer.transform(featureModel, "", ONE_WAY);
-        Dopler dopler2 = transformer.transform(featureModel, "", ROUNDTRIP);
+        Dopler dopler1 = transformer.transform(featureModel, "", ONE_WAY, false);
+        Dopler dopler2 = transformer.transform(featureModel, "", ROUNDTRIP, false);
         Dopler cleanDopler1 = new DecisionModelReader().read(new DecisionModelWriter().write(dopler1), "");
         Dopler cleanDopler2 = new DecisionModelReader().read(new DecisionModelWriter().write(dopler2), "");
-        transformer.transform(cleanDopler1, "", ONE_WAY);
-        transformer.transform(cleanDopler2, "", ROUNDTRIP);
+        transformer.transform(cleanDopler1, "", ONE_WAY, false);
+        transformer.transform(cleanDopler2, "", ROUNDTRIP, false);
     }
 
     private static Stream<Arguments> dataSourceMethod() throws IOException {

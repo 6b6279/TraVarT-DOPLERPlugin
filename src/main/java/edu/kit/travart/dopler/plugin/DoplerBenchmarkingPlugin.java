@@ -50,10 +50,12 @@ public class DoplerBenchmarkingPlugin implements IBenchmarkingPlugin<Dopler> {
         injector = new Injector();
     }
 
+    /*
     @Override
     public IModelTransformer<Dopler> getTransformer() {
         return injector.getInstance(Transformer.class);
     }
+    */
     
     @Override
 	public AbstractBenchmarkingTransformer<Dopler> getBenchmarkingTransformer() {

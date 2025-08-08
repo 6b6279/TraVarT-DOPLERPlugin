@@ -6,6 +6,7 @@ import de.vill.model.FeatureModel;
 import edu.kit.dopler.model.Dopler;
 import edu.kit.travart.dopler.transformation.decision.to.feature.DmToFmTransformer;
 import edu.kit.travart.dopler.transformation.feature.to.decision.FmToDmTransformer;
+import edu.kit.travart.dopler.transformation.util.DoplerStatistics;
 import at.jku.cps.travart.core.transformation.*;
 
 public class DoplerBenchmarkingTransformer extends AbstractBenchmarkingTransformer<Dopler> {
@@ -38,6 +39,6 @@ public class DoplerBenchmarkingTransformer extends AbstractBenchmarkingTransform
 	
 	@Override
 	public IStatistics<Dopler> getTargetStatistics() {
-		throw new UnsupportedOperationException("Not implemented");
+		return DoplerStatistics.getInstance();
 	}
 }
